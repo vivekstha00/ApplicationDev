@@ -74,72 +74,130 @@
 //     }
 // }
 
-// Task 3
+// Task 3 and 4
 
-class ConditionalStatement
+// class ConditionalStatement
+// {
+//     static void Main(string[] args)
+//     {
+//         Console.WriteLine("=======Conditional Statement =======");
+//         // Age();
+//         Day();
+//         static void Age()
+//         {
+//             Console.Write("Enter your age: ");
+//             int age = Convert.ToInt32(Console.ReadLine());
+
+//             if (age < 13)
+//             {
+//                 Console.WriteLine("Child");
+//             }
+//             else if (age >= 13 && age <= 19)
+//             {
+//                 Console.WriteLine("Teenager");
+//             }
+//             else if (age >= 20)
+//             {
+//                 Console.WriteLine("Adult");
+//             }
+//             else
+//             {
+//                 Console.WriteLine("Invalid input.");
+//             }
+//         }
+
+//         static void Day()
+//         {
+//             Console.Write("Enter a number (1-7) to get the corresponding day of the week: ");
+//             int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+//             switch (dayNumber)
+//             {
+//                 case 1:
+//                     Console.WriteLine("Sunday");
+//                     break;
+//                 case 2:
+//                     Console.WriteLine("Monday");
+//                     break;
+//                 case 3:
+//                     Console.WriteLine("Tuesday");
+//                     break;
+//                 case 4:
+//                     Console.WriteLine("Wednesday");
+//                     break;
+//                 case 5:
+//                     Console.WriteLine("Thursday");
+//                     break;
+//                 case 6:
+//                     Console.WriteLine("Friday");
+//                     break;
+//                 case 7:
+//                     Console.WriteLine("Saturday");
+//                     break;
+//                 default:
+//                     Console.WriteLine("Invalid input! Please enter a number between 1 and 7.");
+//                     break;
+//             }
+//         }
+//     }
+// }
+
+// Task 5
+class Loop
 {
-    static void Main(string[] args)
+    static void Main(String[] args)
     {
-        Console.WriteLine("=======Conditional Statement =======");
-        // Age();
-        Day();
-        static void Age()
+        Console.WriteLine("=======Loops =======");
+        ForLoop();
+        WhileLoop();
+        Array();
+        static void ForLoop()
         {
-            Console.Write("Enter your age: ");
-            int age = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter a number N: ");
+            int N = Convert.ToInt32(Console.ReadLine());
 
-            if (age < 13)
+            int sum = 0;
+            for (int i = 1; i <= N; i++)
             {
-                Console.WriteLine("Child");
+                sum += i;
             }
-            else if (age >= 13 && age <= 19)
+            Console.WriteLine($"Sum from 1 to {N}: {sum}");
+            Console.WriteLine();
+        }
+        static void WhileLoop()
+        {
+            int number = 1;
+
+            while (number <= 20)
             {
-                Console.WriteLine("Teenager");
+                if (number == 15)
+                {
+                    break;
+                }
+                if (number % 4 == 0)
+                {
+                    number++;
+                    continue;
+                }
+                Console.WriteLine(number);
+                number++;
             }
-            else if (age >= 20)
+            Console.WriteLine();
+        }
+        static void Array()
+        {
+            int[] numbers = { 2, 5, 8, 10, 3, 7 };
+
+            int sum = 0;
+            foreach (int num in numbers)
             {
-                Console.WriteLine("Adult");
+                sum += num;
             }
-            else
-            {
-                Console.WriteLine("Invalid input.");
-            }
+
+            Console.WriteLine($"Array elements: [{string.Join(", ", numbers)}]");
+            Console.WriteLine($"Sum of all elements: {sum}");
         }
 
-        static void Day()
-        {
-            Console.Write("Enter a number (1-7) to get the corresponding day of the week: ");
-            int dayNumber = Convert.ToInt32(Console.ReadLine());
-
-            switch (dayNumber)
-            {
-                case 1:
-                    Console.WriteLine("Sunday");
-                    break;
-                case 2:
-                    Console.WriteLine("Monday");
-                    break;
-                case 3:
-                    Console.WriteLine("Tuesday");
-                    break;
-                case 4:
-                    Console.WriteLine("Wednesday");
-                    break;
-                case 5:
-                    Console.WriteLine("Thursday");
-                    break;
-                case 6:
-                    Console.WriteLine("Friday");
-                    break;
-                case 7:
-                    Console.WriteLine("Saturday");
-                    break;
-                default:
-                    Console.WriteLine("Invalid input! Please enter a number between 1 and 7.");
-                    break;
-            }
-        }
     }
 }
-
     
