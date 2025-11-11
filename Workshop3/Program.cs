@@ -49,30 +49,97 @@
 
 // Task 2
 
-class NullOperations
-{
+// class NullOperations
+// {
 
+//     static void Main(string[] args)
+//     {
+//         Console.WriteLine("=======Workhop 3 - Null Operations =======");
+//         PerformNullChecks();
+
+
+//         static void PerformNullChecks()
+//         {
+//             string username = null;
+
+//             string firstResult = (username == null) ? "Username is not available" : username;
+//             Console.WriteLine($"Ternary Check: {firstResult}");
+
+//             string secondResult = username ?? "Username is not available";
+//             Console.WriteLine($"Null-Coalescing Check: {secondResult}");
+
+//             username ??= "vivekstha99";
+//             Console.WriteLine($"After Null-Coalescing Assignment: {username}");
+//         }
+//     }
+// }
+
+// Task 3
+
+class ConditionalStatement
+{
     static void Main(string[] args)
     {
-        Console.WriteLine("=======Workhop 3 - Null Operations =======");
-        PerformNullChecks();
-
-
-        static void PerformNullChecks()
+        Console.WriteLine("=======Conditional Statement =======");
+        // Age();
+        Day();
+        static void Age()
         {
-            string username = null;
+            Console.Write("Enter your age: ");
+            int age = Convert.ToInt32(Console.ReadLine());
 
-            string firstResult = (username == null) ? "Username is not available" : username;
-            Console.WriteLine($"Ternary Check: {firstResult}");
+            if (age < 13)
+            {
+                Console.WriteLine("Child");
+            }
+            else if (age >= 13 && age <= 19)
+            {
+                Console.WriteLine("Teenager");
+            }
+            else if (age >= 20)
+            {
+                Console.WriteLine("Adult");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input.");
+            }
+        }
 
-            string secondResult = username ?? "Username is not available";
-            Console.WriteLine($"Null-Coalescing Check: {secondResult}");
+        static void Day()
+        {
+            Console.Write("Enter a number (1-7) to get the corresponding day of the week: ");
+            int dayNumber = Convert.ToInt32(Console.ReadLine());
 
-            username ??= "vivekstha99";
-            Console.WriteLine($"After Null-Coalescing Assignment: {username}");
+            switch (dayNumber)
+            {
+                case 1:
+                    Console.WriteLine("Sunday");
+                    break;
+                case 2:
+                    Console.WriteLine("Monday");
+                    break;
+                case 3:
+                    Console.WriteLine("Tuesday");
+                    break;
+                case 4:
+                    Console.WriteLine("Wednesday");
+                    break;
+                case 5:
+                    Console.WriteLine("Thursday");
+                    break;
+                case 6:
+                    Console.WriteLine("Friday");
+                    break;
+                case 7:
+                    Console.WriteLine("Saturday");
+                    break;
+                default:
+                    Console.WriteLine("Invalid input! Please enter a number between 1 and 7.");
+                    break;
+            }
         }
     }
 }
-
 
     
