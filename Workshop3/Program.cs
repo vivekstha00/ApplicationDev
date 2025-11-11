@@ -143,61 +143,124 @@
 // }
 
 // Task 5
-class Loop
+// class Loop
+// {
+//     static void Main(String[] args)
+//     {
+//         Console.WriteLine("=======Loops =======");
+//         ForLoop();
+//         WhileLoop();
+//         Array();
+//         static void ForLoop()
+//         {
+//             Console.Write("Enter a number N: ");
+//             int N = Convert.ToInt32(Console.ReadLine());
+
+//             int sum = 0;
+//             for (int i = 1; i <= N; i++)
+//             {
+//                 sum += i;
+//             }
+//             Console.WriteLine($"Sum from 1 to {N}: {sum}");
+//             Console.WriteLine();
+//         }
+//         static void WhileLoop()
+//         {
+//             int number = 1;
+
+//             while (number <= 20)
+//             {
+//                 if (number == 15)
+//                 {
+//                     break;
+//                 }
+//                 if (number % 4 == 0)
+//                 {
+//                     number++;
+//                     continue;
+//                 }
+//                 Console.WriteLine(number);
+//                 number++;
+//             }
+//             Console.WriteLine();
+//         }
+//         static void Array()
+//         {
+//             int[] numbers = { 2, 5, 8, 10, 3, 7 };
+
+//             int sum = 0;
+//             foreach (int num in numbers)
+//             {
+//                 sum += num;
+//             }
+
+//             Console.WriteLine($"Array elements: [{string.Join(", ", numbers)}]");
+//             Console.WriteLine($"Sum of all elements: {sum}");
+//         }
+
+//     }
+// }
+
+
+class TryCatch
 {
-    static void Main(String[] args)
+    static void Main(string[] args)
     {
-        Console.WriteLine("=======Loops =======");
-        ForLoop();
-        WhileLoop();
-        Array();
-        static void ForLoop()
-        {
-            Console.Write("Enter a number N: ");
-            int N = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("======Try Catch========");
+        One();
 
-            int sum = 0;
-            for (int i = 1; i <= N; i++)
+        Two();
+
+        // One Number
+        static void One()
+        {
+            Console.Write("Enter a number: ");
+            string input = Console.ReadLine();
+
+            try
             {
-                sum += i;
+                int number = Convert.ToInt32(input);
+                Console.WriteLine($"Converted number: {number}");
             }
-            Console.WriteLine($"Sum from 1 to {N}: {sum}");
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid number format");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Number is too large or too small");
+            }
+            finally
+            {
+                Console.WriteLine("Program Executed");
+            }
+
             Console.WriteLine();
         }
-        static void WhileLoop()
+        // Two number
+        static void Two()
         {
-            int number = 1;
+            Console.Write("Enter a password: ");
+            string password = Console.ReadLine();
 
-            while (number <= 20)
+            try
             {
-                if (number == 15)
-                {
-                    break;
-                }
-                if (number % 4 == 0)
-                {
-                    number++;
-                    continue;
-                }
-                Console.WriteLine(number);
-                number++;
+                ValidatePassword(password);
+                Console.WriteLine("Password satisfied the requirement");
             }
-            Console.WriteLine();
-        }
-        static void Array()
-        {
-            int[] numbers = { 2, 5, 8, 10, 3, 7 };
-
-            int sum = 0;
-            foreach (int num in numbers)
+            catch (Exception ex)
             {
-                sum += num;
+                Console.WriteLine($"Error: {ex.Message}");
             }
-
-            Console.WriteLine($"Array elements: [{string.Join(", ", numbers)}]");
-            Console.WriteLine($"Sum of all elements: {sum}");
         }
 
+        static void ValidatePassword(string password)
+        {
+            if (password.Length < 6)
+            {
+                throw new Exception("Password must be at least 6 characters.");
+            }
+        }
     }
 }
-    
+
