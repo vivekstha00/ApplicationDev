@@ -78,57 +78,107 @@
 // }
 
 // Task 3. Parameters Types
-public class ParameterDemo
+// public class ParameterDemo
+// {
+//     public void Increase(ref int number)
+//     {
+//         number += 10;
+//     }    
+//     public void GetFullName(out string fullname)
+//     {
+//         fullname = "Bibek Shrestha";
+//     }    
+//     public int SumAll(params int[] numbers)
+//     {
+//         int sum = 0;
+//         foreach (int num in numbers)
+//         {
+//             sum += num;
+//         }
+//         return sum;
+//     }
+// }
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         ParameterDemo demo = new ParameterDemo();
+        
+//         Console.WriteLine("=== Demonstrating ref Parameter ===");
+//         // Call Increase method with ref parameter
+//         int myNumber = 25;
+//         Console.WriteLine($"Before Increase: myNumber = {myNumber}");
+//         demo.Increase(ref myNumber);
+//         Console.WriteLine($"After Increase: myNumber = {myNumber}");
+        
+//         Console.WriteLine("\n=== Demonstrating out Parameter ===");
+//         // Call GetFullName method with out parameter
+//         string name;
+//         demo.GetFullName(out name);
+//         Console.WriteLine($"Full Name: {name}");
+        
+//         Console.WriteLine("\n=== Demonstrating params Parameter ===");
+//         // Call SumAll method with different number of arguments
+//         int sum1 = demo.SumAll(5, 10, 15);
+//         Console.WriteLine($"SumAll(5, 10, 15) = {sum1}");
+        
+//         int sum2 = demo.SumAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+//         Console.WriteLine($"SumAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) = {sum2}");
+        
+//         int sum3 = demo.SumAll(100);
+//         Console.WriteLine($"SumAll(100) = {sum3}");
+        
+//         int sum4 = demo.SumAll();
+//         Console.WriteLine($"SumAll() with no arguments = {sum4}");
+//     }
+// }
+
+// Task 4 Constructor
+// Player.cs (or add this to your Program.cs file)
+public class Player
 {
-    public void Increase(ref int number)
+    // Instance fields
+    public string playerName = "";
+    public int level;
+    public int health;
+    
+    // Default constructor
+    public Player()
     {
-        number += 10;
-    }    
-    public void GetFullName(out string fullname)
+        Console.WriteLine("Default constructor has been called");
+    }
+    
+    // Parameterized constructor
+    public Player(string playerName, int level, int health)
     {
-        fullname = "Bibek Shrestha";
-    }    
-    public int SumAll(params int[] numbers)
-    {
-        int sum = 0;
-        foreach (int num in numbers)
-        {
-            sum += num;
-        }
-        return sum;
+        this.playerName = playerName;
+        this.level = level;
+        this.health = health;
     }
 }
+
+// Program.cs
 class Program
 {
     static void Main(string[] args)
     {
-        ParameterDemo demo = new ParameterDemo();
+        // Create object using default constructor
+        Console.WriteLine("Creating player1 with default constructor:");
+        Player player1 = new Player();        
+        Console.WriteLine($"Player Name: {player1.playerName}");
+        Console.WriteLine($"Level: {player1.level}");
+        Console.WriteLine($"Health: {player1.health}");      
+        // Create object using parameterized constructor
+        Player player2 = new Player("Rohan", 25, 100);
         
-        Console.WriteLine("=== Demonstrating ref Parameter ===");
-        // Call Increase method with ref parameter
-        int myNumber = 25;
-        Console.WriteLine($"Before Increase: myNumber = {myNumber}");
-        demo.Increase(ref myNumber);
-        Console.WriteLine($"After Increase: myNumber = {myNumber}");
+        Console.WriteLine($"Player Name: {player2.playerName}");
+        Console.WriteLine($"Level: {player2.level}");
+        Console.WriteLine($"Health: {player2.health}");
         
-        Console.WriteLine("\n=== Demonstrating out Parameter ===");
-        // Call GetFullName method with out parameter
-        string name;
-        demo.GetFullName(out name);
-        Console.WriteLine($"Full Name: {name}");
-        
-        Console.WriteLine("\n=== Demonstrating params Parameter ===");
-        // Call SumAll method with different number of arguments
-        int sum1 = demo.SumAll(5, 10, 15);
-        Console.WriteLine($"SumAll(5, 10, 15) = {sum1}");
-        
-        int sum2 = demo.SumAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        Console.WriteLine($"SumAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) = {sum2}");
-        
-        int sum3 = demo.SumAll(100);
-        Console.WriteLine($"SumAll(100) = {sum3}");
-        
-        int sum4 = demo.SumAll();
-        Console.WriteLine($"SumAll() with no arguments = {sum4}");
+        // Additional demonstration
+        Player player3 = new Player("Danny", 30, 85);
+        Console.WriteLine($"Player Name: {player3.playerName}");
+        Console.WriteLine($"Level: {player3.level}");
+        Console.WriteLine($"Health: {player3.health}");
     }
 }
