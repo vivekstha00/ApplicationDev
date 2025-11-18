@@ -135,50 +135,82 @@
 
 // Task 4 Constructor
 // Player.cs (or add this to your Program.cs file)
-public class Player
-{
-    // Instance fields
-    public string playerName = "";
-    public int level;
-    public int health;
+// public class Player
+// {
+//     // Instance fields
+//     public string playerName = "";
+//     public int level;
+//     public int health;
     
-    // Default constructor
-    public Player()
-    {
-        Console.WriteLine("Default constructor has been called");
-    }
+//     // Default constructor
+//     public Player()
+//     {
+//         Console.WriteLine("Default constructor has been called");
+//     }
     
-    // Parameterized constructor
-    public Player(string playerName, int level, int health)
-    {
-        this.playerName = playerName;
-        this.level = level;
-        this.health = health;
-    }
-}
+//     // Parameterized constructor
+//     public Player(string playerName, int level, int health)
+//     {
+//         this.playerName = playerName;
+//         this.level = level;
+//         this.health = health;
+//     }
+// }
 
-// Program.cs
+// // Program.cs
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         // Create object using default constructor
+//         Console.WriteLine("Creating player1 with default constructor:");
+//         Player player1 = new Player();        
+//         Console.WriteLine($"Player Name: {player1.playerName}");
+//         Console.WriteLine($"Level: {player1.level}");
+//         Console.WriteLine($"Health: {player1.health}");      
+//         // Create object using parameterized constructor
+//         Player player2 = new Player("Rohan", 25, 100);
+        
+//         Console.WriteLine($"Player Name: {player2.playerName}");
+//         Console.WriteLine($"Level: {player2.level}");
+//         Console.WriteLine($"Health: {player2.health}");
+        
+//         // Additional demonstration
+//         Player player3 = new Player("Danny", 30, 85);
+//         Console.WriteLine($"Player Name: {player3.playerName}");
+//         Console.WriteLine($"Level: {player3.level}");
+//         Console.WriteLine($"Health: {player3.health}");
+//     }
+// }
+
+//Task 6 Debugging
+
+// Program.cs - Debugging Practice
 class Program
 {
     static void Main(string[] args)
     {
-        // Create object using default constructor
-        Console.WriteLine("Creating player1 with default constructor:");
-        Player player1 = new Player();        
-        Console.WriteLine($"Player Name: {player1.playerName}");
-        Console.WriteLine($"Level: {player1.level}");
-        Console.WriteLine($"Health: {player1.health}");      
-        // Create object using parameterized constructor
-        Player player2 = new Player("Rohan", 25, 100);
+        int marks = 0;
+        int total = 0;
         
-        Console.WriteLine($"Player Name: {player2.playerName}");
-        Console.WriteLine($"Level: {player2.level}");
-        Console.WriteLine($"Health: {player2.health}");
+        // Input marks using TryParse
+        Console.Write("Enter marks obtained: ");
+        int.TryParse(Console.ReadLine(), out marks);
         
-        // Additional demonstration
-        Player player3 = new Player("Danny", 30, 85);
-        Console.WriteLine($"Player Name: {player3.playerName}");
-        Console.WriteLine($"Level: {player3.level}");
-        Console.WriteLine($"Health: {player3.health}");
+        // Input total using TryParse
+        Console.Write("Enter total marks: ");
+        int.TryParse(Console.ReadLine(), out total);
+                
+        double percentage = marks / total * 100;
+                
+        Console.WriteLine($"Percentage: {percentage}%");
+        
+        
+        Console.WriteLine("\n WHY WRONG?");
+        Console.WriteLine("Integer division! 85/100 = 0, then 0*100 = 0%");
+    
+        Console.WriteLine("\nFIX:");
+        double correct = (double)marks / total * 100;
+        Console.WriteLine($"Cast to double: (double)marks / total * 100 = {correct}%");
     }
 }
