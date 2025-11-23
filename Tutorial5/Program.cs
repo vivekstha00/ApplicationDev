@@ -56,6 +56,16 @@
         EnglishTeacher t2 = new EnglishTeacher();
         t2.Teaching();
 
+        Console.WriteLine("Abstraction Example:");
+        Bus bus1 = new Bus();
+        bus1.Display();
+        bus1.StartEngine();
+        bus1.StopEngine();
+
+        SuperBike bike2 = new SuperBike();
+        bike2.Display();
+        bike2.StartEngine();
+        bike2.StopEngine();
 
     }
 
