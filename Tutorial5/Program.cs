@@ -41,6 +41,22 @@
         bike1.Start();
         bike1.Stop();
         bike1.DisplayInfo();
+
+
+        System.Console.WriteLine("Polymorphism Example:");
+        Printer printer1 = new Printer();
+        printer1.Print();
+        printer1.Print("Hello, World!");
+        printer1.Print(42);
+        printer1.Print("Hello", 3);
+
+        System.Console.WriteLine(" Runtime Polymorphism Example:");
+        NepaliTeacher t1 = new NepaliTeacher();
+        t1.Teaching();
+        EnglishTeacher t2 = new EnglishTeacher();
+        t2.Teaching();
+
+
     }
 
 }
