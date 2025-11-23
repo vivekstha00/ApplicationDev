@@ -23,6 +23,24 @@
         goodBankAccount.Deposit(500);
         goodBankAccount.Withdraw(200);
         Console.WriteLine($"{goodBankAccount.Balance}");
+
+
+        System.Console.WriteLine("Inheritance Example:");
+        Car car1 = new Car();
+        car1.Brand = "Toyota";
+        car1.Speed = 170;
+        car1.Seats = 4;
+        car1.Start();
+        car1.Stop();
+        car1.DisplayInfo();
+
+        Bike bike1 = new Bike();
+        bike1.Brand = "Yamaha";
+        bike1.Speed = 120;
+        bike1.HasCarrier = true;
+        bike1.Start();
+        bike1.Stop();
+        bike1.DisplayInfo();
     }
 
 }
