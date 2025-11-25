@@ -97,6 +97,35 @@ class Program
         
         Console.WriteLine();
 
+        Console.WriteLine("6. COMPREHENSIVE OOP EXERCISE:");
+        Console.WriteLine("------------------------------------------");
+        Console.WriteLine("Electronics Store Management System\n");
+        
+        // Create ElectronicsStore
+        ElectronicsStore store = new ElectronicsStore();
+        
+        // Create devices
+        Laptop laptop1 = new Laptop("Dell", 1200.00);
+        Laptop laptop2 = new Laptop("HP", 950.00);
+        Smartphone smartphone1 = new Smartphone("Samsung", 800.00);
+        Smartphone smartphone2 = new Smartphone("iPhone", 1100.00);
+        
+        // Add devices to store
+        Console.WriteLine("Adding devices to store:");
+        store.AddDevice(laptop1);
+        store.AddDevice(laptop2);
+        store.AddDevice(smartphone1);
+        store.AddDevice(smartphone2);
+        
+        // Display all devices with child-specific methods
+        store.ShowAllDeviceDetails();
+        
+        // Remove a device
+        Console.WriteLine("\nRemoving HP laptop from store:");
+        store.RemoveDevice(laptop2);
+        
+        // Display updated inventory
+        store.ShowAllDeviceDetails();
 
     }
 }
