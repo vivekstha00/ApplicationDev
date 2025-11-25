@@ -51,5 +51,17 @@ class Program
         
         Console.WriteLine();
 
+        // POLYMORPHISM METHOD OVERLOADING
+         Console.WriteLine("3. POLYMORPHISM - METHOD OVERLOADING:");
+        Console.WriteLine("------------------------------------------");
+        
+        Printer printer = new Printer();
+        
+        printer.Print("Hello, Workshop!");
+        printer.Print(42);
+        printer.Print("Welcome", 3);
+        
+        Console.WriteLine();
+
     }
 }
