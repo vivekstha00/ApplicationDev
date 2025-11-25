@@ -79,6 +79,24 @@ class Program
         englishTeacher.Teaching();  // Uses base class implementation
         englishTeacher.SalaryInfo();
         
+        // Abstraction
+        Console.WriteLine("5. ABSTRACTION EXAMPLE:");
+        Console.WriteLine("------------------------------------------");
+        
+        Console.WriteLine("\nCar (Abstract):");
+        CarAbstract car2 = new CarAbstract();
+        car2.Display();
+        car2.StartEngine();
+        car2.StopEngine();
+        
+        Console.WriteLine("\nBike (Abstract):");
+        BikeAbstract bike = new BikeAbstract();
+        bike.Display();
+        bike.StartEngine();
+        bike.StopEngine();
+        
+        Console.WriteLine();
+
 
     }
 }
