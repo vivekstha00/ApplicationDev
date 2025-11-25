@@ -63,5 +63,22 @@ class Program
         
         Console.WriteLine();
 
+        // POLYMORPHISM METHOD OVERRIDING
+        Console.WriteLine("4. POLYMORPHISM - METHOD OVERRIDING:");
+        Console.WriteLine("------------------------------------------");
+        
+        Console.WriteLine("\nNepali Teacher:");
+        NepaliTeacher nepaliTeacher = new NepaliTeacher();
+        nepaliTeacher.Name = "Ram Prasad";
+        nepaliTeacher.Teaching();
+        nepaliTeacher.SalaryInfo();
+        
+        Console.WriteLine("\nEnglish Teacher:");
+        EnglishTeacher englishTeacher = new EnglishTeacher();
+        englishTeacher.Name = "Krishna Poudel";
+        englishTeacher.Teaching();  // Uses base class implementation
+        englishTeacher.SalaryInfo();
+        
+
     }
 }
